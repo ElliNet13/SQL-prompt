@@ -41,7 +41,7 @@ def main():
 
     while True:
         # Input SQL command
-        command = input("Enter SQL command (or type 'exit' to quit): ")
+        command = input("Enter SQL command (or type 'exit' to quit)> ")
         if command.lower() == 'exit':
             break
         execute_sql_command(conn, command)
