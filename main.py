@@ -4,6 +4,9 @@ import sqlite3
 def execute_sql_command(conn, command):
     cursor = conn.cursor()
     try:
+        # Check for backslash at the end to extend command
+        while command.endswith('\\'):
+            command = command[:-1] + input("... ")
         cursor.execute(command)
         if command.strip().lower().startswith('select'):
             rows = cursor.fetchall()
